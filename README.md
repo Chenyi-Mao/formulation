@@ -1,5 +1,5 @@
 <p align="right">
-  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT.png" width="150">
+  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_PNG.png" width="100">
 </p>
 
 # Random Forest Classifier, a novel tool on predicting pharmaceutical formulation
