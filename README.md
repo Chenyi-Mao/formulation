@@ -1,7 +1,11 @@
-[Badges!]
-<p align="right">
-  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_PNG.png" width="100">
+<p align="center">
+  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_w_title_calibri.png" width="800">
 </p>
+
+<p align="center">
+  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_w_title.png" width="800">
+</p>
+
 
 # Random Forest Classifier, a novel tool on predicting pharmaceutical formulation
 
