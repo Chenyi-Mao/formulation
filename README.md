@@ -24,8 +24,10 @@ To achieve this goal, we decide to choose an AI-related algorithm, random forest
 The following instructions are prepared for random forest classifier based algorithm, called `formulation`. This instruction conatins five parts: prerequsites, installation, details, modules, and running tests. The goal of this instruction is to help you successfully get a copy of `formulation` running on your local machine, to perform a detailed tutorial to make sure every piece works properly, and to use it for desired purposes. 
 
 ### Prerequsites
+Python is the primary software for the 'formulation'. We recommend python 3.7 or higher version here. Meanwhile, serval python packages are also required in advance. They are `pandas`, `numpy`, `scikit-learn`, `matplotlib`, and `math`, and can be easily installed by using conda, a package and environment control system. Finally, everything thing mentioned above should be performed by [Linux Operating System](https://www.linux.com/what-is-linux/) (Linux OS). 
+
 ### Installation
-*don't know yet*
+1. 
 ### Details
 #### Modules
 #### Running tests
@@ -40,8 +42,9 @@ As an open resource, contributing is always welcome. Authors recommend a discuss
 6. create a pull request
 
 ## Authors
-We are greatful of having five developers, Chenyi Mao, Dawei Gu, Zichen Zhu, Jinge Xu, and Ling Zhang, working together in this project. Five developers major in diverse fields and have brought different insights into this project. Chenyi whose background in biochemistry initalized this project. Zichen and Jingge used their background in chemical engineering refined the goal. Dawei and Ling replying on their strength in computer science outlined modules. 
+We are greatful of having five developers, Chenyi Mao, Dawei Gu, Zichen Zhu, Jinge Xu, and Ling Zhang, working together in this project. Five developers major in diverse fields and have brought different insights into this project. Chenyi whose background in biochemistry initalized this project. Zichen and Jingge used their background in chemical engineering refined the goal. Dawei and Ling replying on their strength in computer science outlined modules. All authors contributed equally to make this project happen. 
 
 ## License
-MIT
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
 ## Acknowledgments
+
