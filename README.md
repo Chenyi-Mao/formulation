@@ -36,9 +36,23 @@ git clone https://github.com/Chenyi-Mao/formulation.git
 ```
 
 ### Details
-After the installation, you can find more details from here. The packages contains three primary items: two folders called **formulation** and **data** and **README.md**. Formulation folder contains all modules you will need to perform the random forest classifier and all tests developers wrote to test each modules. Details can be found in the next two sections. Raw data for every API and corresponding features locates in **data**. 
+After the installation, you can find more details from here. The packages contains three primary items: two folders called **formulation** and **paper** and **README.md**. Formulation folder contains all modules you will need to perform the random forest classifier and all tests developers wrote to test each modules. Details can be found in the next two sections. Raw data used for the porject comes from a literature article which is included in the folder, paper. 
 
 #### Modules
+The `formulation`has been dividied into 6 modules: *data_dropna*, *fill_missing_value*, *corss_validate_grid_search*, *cross_validate_n_predictors*, *importance*, *predict*, . Each module perform one task and works mutally with others. 
+1. *data_dropna* is used to selectively remove cells that have missing values. Once users get a sense of the raw data, they decide which features are important for the prediction and then data_dropna will help users clean empty cells corresponding to selected features and will return a cleaned dataframe for a further use.  An screenshot is inculded to demosntrate the utility: 
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+2. what if the feature of interest has a large number of value missing that could effect the efficieny of training process? No worries, *fill_missing_value* is here to help! Fill_missing_vlaue is designed to predict the missing value for the feature of interest. Meanwhile, mean squared error will be given after the prediction so users can decide to include this newly filled feature into the training process or not. 
+
+3. once features of interest are settled, *cross_validate_grid_search* and *cross_validate_n_predictors* can be applied to find out the best n_estimator and max_depth combination leading to the best performance. The only difference between ____________________________
+
+4. *importance* reports the individual importance for each selected feature under above chosen n_estimator and max_depth values.
+
+5. accroding to the importance report, users can decide which features to include into the predcition step. *predict* outcomes the accuracy based on the overall test data. An screenshot is inculded to demosntrate the final outcome:
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 #### Running tests
 
 ## Contributing
