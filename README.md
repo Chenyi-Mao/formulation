@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_w_title_calibri.png" width="800">
+  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_w_title_no_center.png" width="800">
 </p>
 
 <p align="center">
