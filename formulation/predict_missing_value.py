@@ -59,6 +59,12 @@ def fill_missing_value(data, needed_cols, train_inputs, train_outpus,
         A dataset with missing values in data[train_outputs] filled as much as
         possible.
     """
+    assert isinstance(test_size, float), "Test_size should be a float number"
+    assert 0 <= test_size <= 1.0, "Test_size should be in the range of 0 to 1."
+    assert isinstance(n_estimators, int), "n_estimators should be an integer."
+    assert n_estimators > 0, "n_estimators should be positive."
+    assert isinstance(max_depth, int), "max_depth should be an integer."
+    assert max_depth > 0, "max_depth should be positive."
 
     clean_data = data_dropna(data, needed_cols, needed_cols)
 
