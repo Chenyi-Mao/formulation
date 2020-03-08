@@ -36,6 +36,7 @@ git clone https://github.com/Chenyi-Mao/formulation.git
 ```
 
 ### Details
+After the installation, you can find more details from here. The packages contains three primary items: two folders called **formulation** and **data** and **README.md**. Formulation folder contains all modules you will need to perform the random forest classifier and all tests developers wrote to test each modules. Details can be found in the next two sections. Raw data for every API and corresponding features locates in **data**. 
 
 #### Modules
 #### Running tests
