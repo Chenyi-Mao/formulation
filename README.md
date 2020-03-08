@@ -69,5 +69,6 @@ We are greatful of having five developers, Chenyi Mao, Dawei Gu, Zichen Zhu, Jin
 
 ## License
 [MIT](https://en.wikipedia.org/wiki/MIT_License)
-## Acknowledgments
 
+## Acknowledgments
+Authors want to thank David Beck and Cao Ting for offering two interesting and eductational courses. Aythors also want to thank David Beck, Cao Ting, Ted Cohen, Jimin Qian, Torin Stetina, and Caitlyn Wolf for any feedbacks. Lastly, C.Mao wants to thank his supervisor Josh Vaughan for allowing him take these two courses that are totally irrelevant to his research. 
