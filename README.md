@@ -30,10 +30,13 @@ Python is the primary software for the 'formulation'. We recommend python 3.7 or
 
 ### Installation
 ```
-git clone web URL
+
+open Linux OS, jump to a directory where you want to save *formulation* and then type the following command to get **formulation**:
+git clone https://github.com/Chenyi-Mao/formulation.git
 ```
 
 ### Details
+
 #### Modules
 #### Running tests
 
