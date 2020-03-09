@@ -65,7 +65,7 @@ As an open resource, contributing is always welcome. Authors recommend a discuss
 We are greatful of having five developers, Chenyi Mao, Dawei Gu, Zichen Zhu, Jinge Xu, and Ling Zhang, working together in this project. Five developers major in diverse fields and have brought different insights into this project. Chenyi who has background in biochemistry initalized this project. Zichen and Jingge used their background in chemical engineering refined the goal. Dawei and Ling replying on their strength in computer science outlined modules. All authors contributed equally to make this project happen. 
 
 ## License
-[MIT](https://en.wikipedia.org/wiki/MIT_License) - see LICENSE.md for details.
+[MIT](https://en.wikipedia.org/wiki/MIT_License) - see [LICENSE](https://github.com/Chenyi-Mao/formulation/blob/master/LICENSE) for details.
 
 ## Acknowledgments
 Authors want to thank David Beck and Ting Cao for offering two interesting and eductational courses. Authors also want to thank David Beck, Ting Cao, Ted Cohen, Jimin Qian, Torin Stetina, and Caitlyn Wolf for any feedbacks. Lastly, C.Mao wants to thank his supervisor Josh Vaughan for allowing him take these two courses that are totally irrelevant to his research. 
