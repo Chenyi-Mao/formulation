@@ -68,7 +68,6 @@ def test_fill_missing_value():
     except AssertionError:
         pass
 
-    clean_data = data_dropna(DATA, NEEDED, NEEDED)
     filled_data = fill_missing_value(DATA, NEEDED, INPUTS, OUTPUT)
 
     assert isinstance(filled_data, pd.DataFrame),\
