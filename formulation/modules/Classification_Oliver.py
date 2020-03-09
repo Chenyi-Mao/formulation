@@ -27,6 +27,9 @@ def Choose_N_property_and_determine_new_accuracy(N,X_data,Y_data):#let user sele
     Y_data: The data need to be output
     return the new report based on the 
     """
+    x_train, x_test, y_train, y_test = train_test_split(X_data, Y_data, test_size = 0.1, random_state = 1)
+    RFC = RandomForestClassifier(n_estimators=100, random_state=2)
+    Classicifation = RFC.fit(x_train, y_train)
     importance_df = pd.DataFrame(Classicifation.feature_importances_,
                        #index=['Unchanged_excretion_in_urine','cLogP','HBA', 'HBD', 'PSDA'],
                        index = list(X_data), columns = ['Value']).sort_values(by=['Value'],ascending=False)

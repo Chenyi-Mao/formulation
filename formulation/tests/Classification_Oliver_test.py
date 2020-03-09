@@ -22,4 +22,4 @@ def test_Choose_N_property_and_determine_new_accuracy():
     pick_data = picked_data.dropna()
     X = pick_data[['Unchanged_excretion_in_urine','cLogP','HBA', 'HBD', 'PSDA']]
     Y = pick_data['Formulation']
-    assert round(test_Choose_N_property_and_determine_new_accuracy(4,X,Y),2) == 0.68
+    assert round(Choose_N_property_and_determine_new_accuracy(4,X,Y),2) == 0.68
