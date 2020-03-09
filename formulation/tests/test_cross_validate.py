@@ -1,6 +1,6 @@
 import numpy as np 
 import pandas as pd 
-from cross_validate import *
+from formulation.modules.cross_validate import *
 
 def test_cross_validate_grid_search():
 

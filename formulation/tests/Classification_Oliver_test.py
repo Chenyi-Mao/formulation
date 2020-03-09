@@ -1,6 +1,8 @@
-import Classification_Oliver
 import pandas as pd
 import numpy as np
+from formulation.modules.Classification_Oliver import predict
+from formulation.modules.Classification_Oliver import Choose_N_property_and_determine_new_accuracy
+
 
 def test_predict():
     raw_data = pd.read_csv('./data/FDA_APPROVED.csv')

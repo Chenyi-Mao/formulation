@@ -3,7 +3,7 @@ This function performs a `sum of importance =1` test on the function `importance
 """
 import numpy as np
 import pandas as pd
-from importance import importance
+from formulation.modules.importance import importance
 
 rawdata = pd.read_csv('./data/FDA_APPROVED.csv')
 data = pd.DataFrame({'Unchanged_excretion_in_urine': rawdata['% Excreted Unchanged in Urine'],
