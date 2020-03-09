@@ -50,7 +50,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 #### Running tests
-Automated tests have been done by using [Travis CI](https://travis-ci.com/Chenyi-Mao/formulation), a intergration service with Github. 
+Automated tests have been done by using [Travis CI](https://travis-ci.com/Chenyi-Mao/formulation), a intergration service with Github. Two badges at the beginning indicates all test functions we have in the tests folder pass with _XXXXXXX_ coverage rate. 
 
 ## Contributing
 As an open resource, contributing is always welcome. Authors recommend a discussion through openning an issue, writing an email, or any other approaches prior to making any changes. Then please follow the following procedures:
