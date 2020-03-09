@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO.png" width="900">
-</p>
-
 <p align="left">
   <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO.png" width="900">
 </p>
