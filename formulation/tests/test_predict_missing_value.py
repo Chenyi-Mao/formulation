@@ -72,3 +72,7 @@ def test_fill_missing_value():
 
     assert isinstance(filled_data, pd.DataFrame),\
         "Type error. pd.DataFrame expected"
+
+
+test_data_dropna()
+test_fill_missing_value()

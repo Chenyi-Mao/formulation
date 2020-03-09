@@ -32,3 +32,6 @@ def test_importance():
             c[i]), 6) == 1, "Importance sum is not 1, something wrong"
 
     return
+
+
+test_importance()

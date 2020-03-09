@@ -33,3 +33,7 @@ def test_determine_new_accuracy():
     Y = pick_data['Formulation']
     assert isinstance(determine_new_accuracy(
         3, X, Y), float), "wrong type 111"
+
+
+test_predict()
+test_determine_new_accuracy()
