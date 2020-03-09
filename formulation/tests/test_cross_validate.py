@@ -1,13 +1,13 @@
 import pandas as pd
-from modules.cross_validate import handle_missing_values
-from modules.cross_validate import cross_validate_grid_search
+from formulation.modules.cross_validate import handle_missing_values
+from formulation.modules.cross_validate import cross_validate_grid_search
 # from cross_validate import cross_validate_n_predictors
 
 
 def test_cross_validate_grid_search():
 
-    # data_path = "../data/"
-    data_path = "./formulation/data/"
+    data_path = "../data/"
+    #data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
