@@ -10,7 +10,10 @@
   <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO_for_DIRECT_w_title_no_bold.png" width="800">
 </p>
 
----
+--------------
+
+[![travis build](https://travis-ci.com/Chenyi-Mao/formulation.svg?branch=master)](https://travis-ci.com/Chenyi-Mao/formulation)
+[![License](https://img.shields.io/github/license/Chenyi-Mao/formulation)](https://github.com/Chenyi-Mao/formulation/blob/master/LICENSE)
 
 We are presenting a model, where the formulation of a potential active pharmaceutical ingredient (API) is predicted by using random forest classifier. This model is built on 5 features coming from each API: number of hydrogen-bond acceptor, number of hydrogen-bond doner, polar surface area density, calulated log value of partition coefficient between octanol and water, and unchanged excretion percentage in urine. We believe this model would benefit the very first stage of drug screening, discovery and development.
 
