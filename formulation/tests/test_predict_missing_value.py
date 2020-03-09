@@ -60,11 +60,19 @@ def test_fill_missing_value():
     try:
         # test_size need to be a positive float number
         fill_missing_value(DATA, NEEDED, INPUTS, OUTPUT, test_size=-1.0)
+        raise Exception("Illegal input test failed!")
+    except AssertionError:
+        pass
+
+    try:
         # n_estimators need to be a positive integer
         fill_missing_value(DATA, NEEDED, INPUTS, OUTPUT, n_estimators=-1)
+    except AssertionError:
+        pass
+
+    try:
         # max_depth need to be a positive integer
         fill_missing_value(DATA, NEEDED, INPUTS, OUTPUT, max_depth=1.2)
-        raise Exception("Illegal input test failed!")
     except AssertionError:
         pass
 
