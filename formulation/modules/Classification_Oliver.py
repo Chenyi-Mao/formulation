@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, accuracy_score
 
 def predict(X_data,Y_data):
     """
@@ -12,11 +15,13 @@ def predict(X_data,Y_data):
     RFC = RandomForestClassifier(n_estimators=100, random_state=2)
     Classicifation = RFC.fit(x_train, y_train)
     y_pred = Classicifation.predict(x_test)
+    importance = pd.Series(Classicifation.feature_importances_,
+                       index=list(X_data)).sort_values(ascending=False)
     print("Accuracy:",accuracy_score(y_test, y_pred))
     print("\n Feature Importance \n", importance)
     print("\n Classicifation report\n", classification_report(y_test,y_pred))
-    #print("The predict Classicifation for all \n", y_pred)
-    return y_pred
+    print("The predict Classicifation for all \n", y_pred)
+    return accuracy_score(y_test, y_pred)
 
 
 def Choose_N_property_and_determine_new_accuracy(N,X_data,Y_data):#let user select first N's picks. 
