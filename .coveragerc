@@ -1,0 +1,8 @@
+# @source: https://github.com/dacb/codebase_conda/blob/master/.coveragerc
+[report]
+omit =  
+    */python?.?/*
+    */site-packages/nose/*
+    *__init__*
+exclude_lines =
+    if __name__ == .__main__.:
