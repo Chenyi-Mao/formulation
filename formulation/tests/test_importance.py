@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from formulation.modules.importance import importance
 
-rawdata = pd.read_csv('./data/FDA_APPROVED.csv')
+rawdata = pd.read_csv('../data/FDA_APPROVED.csv')
 data = pd.DataFrame({'Unchanged_excretion_in_urine': rawdata['% Excreted Unchanged in Urine'],
                      'cLogP': rawdata['CLogP'], 'HBA': rawdata['HBA'], 'HBD': rawdata['HBD'],
                      'PSDA': rawdata['PSDA'], 'Formulation': rawdata['Formulation']})
@@ -20,7 +20,7 @@ def test_importance():
     c = np.array(b)
 
     for i in range(len([100, 300, 500, 700, 1000])):
-        assert np.sum(
-            c[i]) == 1, "Importance sum is not 1, something wrong in process"
+        assert np.round(np.sum(
+            c[i]),6) == 1, "Importance sum is not 1, something wrong in process"
 
     return
