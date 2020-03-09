@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from formulation.modules.importance import importance
 
-rawdata = pd.read_csv('../data/FDA_APPROVED.csv')
+rawdata = pd.read_csv('./formulation/data/FDA_APPROVED.csv')
 data = pd.DataFrame({'Unchanged_excretion_in_urine':
                      rawdata['% Excreted Unchanged in Urine'],
                      'cLogP': rawdata['CLogP'], 'HBA': rawdata['HBA'],

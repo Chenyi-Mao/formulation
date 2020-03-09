@@ -1,11 +1,10 @@
 import pandas as pd
-# import numpy as np
 from formulation.modules.classification import predict
 from formulation.modules.classification import determine_new_accuracy
 
 
 def test_predict():
-    raw_data = pd.read_csv('../data/FDA_APPROVED.csv')
+    raw_data = pd.read_csv('./formulation/data/FDA_APPROVED.csv')
     picked_data = pd.DataFrame({'Unchanged_excretion_in_urine':
                                 raw_data['% Excreted Unchanged in Urine'],
                                 'cLogP': raw_data['CLogP'],
@@ -21,7 +20,7 @@ def test_predict():
 
 
 def test_determine_new_accuracy():
-    raw_data = pd.read_csv('../data/FDA_APPROVED.csv')
+    raw_data = pd.read_csv('./formulation/data/FDA_APPROVED.csv')
     picked_data = pd.DataFrame({'Unchanged_excretion_in_urine':
                                 raw_data['% Excreted Unchanged in Urine'],
                                 'cLogP': raw_data['CLogP'],

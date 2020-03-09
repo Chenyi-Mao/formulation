@@ -8,7 +8,7 @@ from formulation.modules.predict_missing_value import fill_missing_value
 
 
 # Global variables used in each test
-DATA = pd.read_csv("../data/FDA_APPROVED.csv")
+DATA = pd.read_csv("./formulation/data/FDA_APPROVED.csv")
 NEEDED = ["MW Drug", "MW Sol", "CLogP", "HBA", "HBD", "PSA", "Measured LogP"]
 INPUTS = NEEDED[:-1]
 OUTPUT = NEEDED[-1]
