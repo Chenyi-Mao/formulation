@@ -34,7 +34,7 @@ install:
 
 # a list of commands to run before the main script
 before_script:
-    - flake8 formulation
+#    - flake8 formulation
 
 # the actual commands to run
 script:
