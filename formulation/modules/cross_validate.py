@@ -14,7 +14,6 @@ def handle_missing_values(df):
 
 
 def cross_validate_grid_search(values, X_df, y_df):
-
     """
         This function uses 10-fold cross-validation to choose the best
         combination of max_depth and n_estimators for random forest classifier.
@@ -72,9 +71,9 @@ def cross_validate_grid_search(values, X_df, y_df):
                 y_trn, y_tst = y[train_index], y[test_index]
 
                 clf = RandomForestClassifier(
-                                    n_estimators=ntrees,
-                                    max_depth=max_depth,
-                                    random_state=0)
+                    n_estimators=ntrees,
+                    max_depth=max_depth,
+                    random_state=0)
                 clf.fit(X_trn, y_trn)
 
                 y_pred = clf.predict(X_tst)
@@ -84,7 +83,7 @@ def cross_validate_grid_search(values, X_df, y_df):
                 accuracies.append(accuracy)
 
                 report = classification_report(
-                    y_tst, y_pred, output_dict=True, zero_division=1)
+                    y_tst, y_pred, output_dict=True)
                 solution += report['solution']['f1-score']
                 capsules += report['capsules']['f1-score']
                 tablets += report['tablets']['f1-score']
@@ -121,16 +120,15 @@ def cross_validate_grid_search(values, X_df, y_df):
     print('Best accuracy for total: {:f}'.format(best_accuracy))
 
     results = [
-            best_for_total,
-            best_for_solution,
-            best_for_capsules,
-            best_for_tablets]
+        best_for_total,
+        best_for_solution,
+        best_for_capsules,
+        best_for_tablets]
 
     return results
 
 
 def cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators):
-
     """
         This function uses 10-fold cross-validation to choose the best
         number of predictors to be included in the training set.
@@ -173,9 +171,9 @@ def cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators):
             y_trn, y_tst = y[train_index], y[test_index]
 
             clf = RandomForestClassifier(
-                            n_estimators=n_estimators,
-                            max_depth=max_depth,
-                            random_state=0)
+                n_estimators=n_estimators,
+                max_depth=max_depth,
+                random_state=0)
             clf.fit(X_trn, y_trn)
 
             y_pred = clf.predict(X_tst)
@@ -235,10 +233,10 @@ if __name__ == '__main__':
     best_for_capsules = results[2]
     best_for_tablets = results[3]
     print('Best max_depth: {:d}, best n_estimators: {:d}'.format(
-                        best_for_total[0], best_for_total[1]))
+        best_for_total[0], best_for_total[1]))
     print('Best parameter for solution catogory:', best_for_solution)
     print('Best parameter for capsules catogory:', best_for_capsules)
     print('Best parameter for tablets catogory:', best_for_tablets)
 
     best_p = cross_validate_n_predictors(
-                X, y, best_for_total[0], best_for_total[1])
+        X, y, best_for_total[0], best_for_total[1])
