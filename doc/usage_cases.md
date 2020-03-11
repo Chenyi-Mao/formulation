@@ -2,12 +2,11 @@
 
 ## Usage Cases
 
-Overview: we are aiming to build a model that can predict the formulation of a certain active pharmaceutical ingredient (API). We are going to reply on different published features from about 900 drugs to build the model. We believe the model can benefit the very first stage of drug screening, discovery and development. 
+* Overview: we are aiming to build a model that can predict the formulation of a certain active pharmaceutical ingredient (API). We are going to reply on different published features from about 900 drugs to build the model. We believe the model can benefit the very first stage of drug screening, discovery and development. 
 
-Who are the potential users: any chemist or drug company
+*Who are the potential users: any chemist or drug company
 
-  
-What are the primary use:
+*What are the primary use:
  cases:predict the best formulation outcome for the API. in addition, potential predict other features that can be generated from the formulation state. 
 	Stretch user cases: since some features we are choosing here are not easy to measure, not all API has that value. Thus, our model could potentially predict the missing value from statistical perspectives and compare it with in silico . 
 
