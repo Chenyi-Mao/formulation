@@ -1,18 +1,14 @@
-# Random forest classifier, a novel tool for predicting pharmaceutical formulation
+<p align="left">
+  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO.png" width="900">
+</p>
+
+--------------
 
 ## Usage Cases
 
-* Overview: we are aiming to build a model that can predict the formulation of a certain active pharmaceutical ingredient (API). We are going to reply on different published features from about 900 drugs to build the model. We believe the model can benefit the very first stage of drug screening, discovery and development. 
-
-*Who are the potential users: any chemist or drug company
-
-*What are the primary use:
- cases:predict the best formulation outcome for the API. in addition, potential predict other features that can be generated from the formulation state. 
-	Stretch user cases: since some features we are choosing here are not easy to measure, not all API has that value. Thus, our model could potentially predict the missing value from statistical perspectives and compare it with in silico . 
-
-What data will you be using: solubility at acidic condition, excretion % in urine, molecular weight, polar surface area, number of hydrogen bond acceptor, number of hydrogen bond donor. 
-
-How much data do you have: 927 drugs, which include 30 active metabolites
-Where are the data coming from: literature (doi: 10.1208/s12248-011-9290-9.) 
-Are they available now: Yes.
-Are the data labeled, unlabeled, etc.? Labeled
+* overview: we are aiming to build a model that can predict the formulation of a certain active pharmaceutical ingredient (API). We are going to reply on published features from about 800 drugs to build the model using random forest classifier. We believe the model can benefit the very first stage of drug screening, discovery and development. 
+* potential users: any chemist or pharmaceutical company
+* applied features for each API: number of hydrogen bond acceptor and donor, polar surface area density, partition coefficient between octane and water, and unexchanged excretion in urine. 
+* data size 800 drugs constsiting of above features and respctive lables (tablets, capsules, and solution).
+* resource: the data comes from a literature ((doi: 10.1208/s12248-011-9290-9).
+* primary uses: 1) predict the missing value for other import features; 2) predict the best formulation outcome that facilitates drug delivery and absorption; 3) extend the model to other supervised stuies. 
