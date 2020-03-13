@@ -1,12 +1,14 @@
 # This component spcfification is written for all items in modules. 
 
 ## 1. predict_missing_value.py
+### 1.1
 * Function Name: drop_na
 * What it does: screening columns of interests and delete empty cells
 * Inputs (with type information): raw data (dataframe), names of select columns (list), names of column of interests (list)
 * Outputs (with type information): cleaned raw data (dataframe)
 * How it interacts with other components: cleaned raw data will be used as input for all other components. 
 
+### 1.2
 * Function Name: fill_missing_value
 * What it does: use random forest regressor to predict missing values for columns of interests
 * Inputs (with type information): raw data (dataframe), names of select columns (list), names of columns used as input for the regression (list), name of a column used as output for the regression (list)
@@ -28,12 +30,14 @@
 * How it interacts with other components: it uses raw data coming from predict_missing_value and n estimator determined by cross_validation. its outcome provides users finalize features before moving on to do a classification. 
 
 ## 4. classification.py
+### 4.1
 * Function Name: determine_new_accuracy
 * What it does: re-calculate accuracies if users decide to choose partial features according to results from importance.py
 * Inputs (with type information): raw data in terms of selected features (dataframe), raw data in terms of a prediction feature (dataframe), number of features (float)
 * Outputs (with type information): accuracy at newly selected features
 * How it interacts with other components: after checking importance.py, it provides users a flexibility to adjust features of interests. its outcome is one of paramenters that can be used to describe the model. 
 
+### 4.2
 * Function Name: classfication
 * What it does: build random forest classifer model and use the model to make a prediction 
 * Inputs (with type information): raw data applied to build the model (dataframe), data of interest for the prediction
