@@ -63,13 +63,16 @@ def fill_missing_value(data, needed_cols, train_inputs, train_outpus,
     assert 0 <= test_size <= 1.0, "Test_size should be in the range of 0 to 1."
     assert isinstance(n_estimators, int), "n_estimators should be an integer."
     assert n_estimators > 0, "n_estimators should be positive."
-    assert isinstance(max_depth, (int, type(None))), "max_depth should be an integer or None."
-    assert max_depth == None or max_depth > 0, "max_depth should be positive."
+    assert isinstance(max_depth, (int, type(None))),\
+        "max_depth should be an integer or None."
+    if max_depth is not None:
+        assert max_depth > 0, "max_depth should be positive."
 
     clean_data = data_dropna(data, needed_cols, needed_cols)
 
     # Split data into training and testing sets
-    train, test = train_test_split(clean_data, test_size=test_size, random_state=2)
+    train, test = train_test_split(clean_data, test_size=test_size,
+                                   random_state=2)
     x_train = train[train_inputs]
     y_train = train[train_outpus]
     x_test = test[train_inputs]
