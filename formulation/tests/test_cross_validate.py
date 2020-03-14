@@ -1,12 +1,13 @@
 import pandas as pd
-from formulation.modules.cross_validate import handle_missing_values
-from formulation.modules.cross_validate import cross_validate_grid_search
+from modules.cross_validate import handle_missing_values
+from modules.cross_validate import cross_validate_grid_search
 # from cross_validate import cross_validate_n_predictors
 
 
 def test_cross_validate_grid_search():
 
-    data_path = './formulation/data/'
+    # data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
@@ -49,4 +50,42 @@ def test_cross_validate_grid_search():
             assert isinstance(results[i][j], int)
 
 
-test_cross_validate_grid_search()
+def cross_validate_n_predictors():
+
+            
+test_cross_validate_grid_search():
+
+    # data_path = "../data/"
+    data_path = "./formulation/data/"
+    data_fname = 'FDA_APPROVED.csv'
+
+    # Read csv file
+    df = pd.read_csv(data_path+data_fname)
+    print(df.tail(3))
+
+    # Extract columns needed
+    columns = ['CLogP', 'HBA', 'HBD', 'PSDA', 'Formulation']
+    df = df[columns]
+
+    # Handle missing values in selected columns
+    df = handle_missing_values(df)
+    print(df.tail(10))
+
+    # Print count of each category
+    print(df.groupby('Formulation').count())
+
+    # Prepare predictors and response variable
+    features = ['CLogP', 'HBA', 'HBD', 'PSDA']
+    X_df = df[features]
+
+    target = ['Formulation']
+    y_df = df[target]
+
+    max_depth = 2
+    n_estimators = 100
+
+    best_p = cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators)
+
+    assert isinstance(best_p, int)
+    assert best_p <= X_df.shape[1]
+
