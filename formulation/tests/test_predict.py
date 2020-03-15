@@ -7,7 +7,7 @@ from formulation.modules.predict_missing_value import data_dropna
 
 
 def test_predict():
-    data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
@@ -46,3 +46,6 @@ def test_predict():
     y_pred2 = predict(clf, X_tst_df)
     assert isinstance(y_pred2, np.ndarray)
     assert y_pred2.shape[0] == y_tst.shape[0]
+
+
+test_predict()

@@ -102,7 +102,7 @@ def cross_validate_grid_search(values, X_df, y_df):
 
     # End search
     # Save grid points and values for plotting figures
-    np.save('../tests/gridvalues.npy', gridvalues)
+    np.save('./formulation/tests/gridvalues.npy', gridvalues)
 
     best_for_total = (best_depth, best_ntrees)
 
@@ -200,7 +200,7 @@ def cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators):
 
 if __name__ == '__main__':
 
-    data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file

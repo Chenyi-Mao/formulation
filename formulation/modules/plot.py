@@ -47,7 +47,7 @@ def plot_figures(fname):
     plt.ylabel('N_estimators from range({:d},{:d}) normalized to [0,1]'.format(
                 int(y_lb), int(y_ub)))
     plt.title('Accuracy vs. (max_depth, n_estimators)')
-    plt.savefig('grid.png')
+    plt.savefig('./formulation/tests/grid.png')
 
     # Plot scatter figure
     fig = plt.figure(figsize=(8, 8))
@@ -62,10 +62,10 @@ def plot_figures(fname):
     ax.set_zlabel('N_estimators', fontsize=12)
     plt.title(
         'Grid search for values of max_dpeth and n_estimators.', fontsize=12)
-    plt.savefig('scatter.png')
+    plt.savefig('./formulation/tests/scatter.png')
 
 
 if __name__ == '__main__':
 
-    fname = '../tests/gridvalues.npy'
+    fname = './formulation/tests/gridvalues.npy'
     plot_figures(fname)

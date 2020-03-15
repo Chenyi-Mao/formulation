@@ -6,7 +6,7 @@ from formulation.modules.predict_missing_value import data_dropna
 
 def test_cross_validate_grid_search():
 
-    data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
@@ -48,7 +48,7 @@ def test_cross_validate_grid_search():
 
 def test_cross_validate_n_predictors():
 
-    data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
@@ -77,3 +77,7 @@ def test_cross_validate_n_predictors():
 
     assert isinstance(best_p, int)
     assert best_p <= X_df.shape[1]
+
+
+test_cross_validate_grid_search()
+test_cross_validate_n_predictors()
