@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from formulation.modules.predict import predict
-from formulation.modules.predict_missing_value import data_dropna
+from ..modules.predict import predict
+from ..modules.predict_missing_value import data_dropna
 
 
 def test_predict():

@@ -1,7 +1,7 @@
 import pandas as pd
-from formulation.modules.cross_validate import cross_validate_grid_search
-from formulation.modules.cross_validate import cross_validate_n_predictors
-from formulation.modules.predict_missing_value import data_dropna
+from ..modules.cross_validate import cross_validate_grid_search
+from ..modules.cross_validate import cross_validate_n_predictors
+from ..modules.predict_missing_value import data_dropna
 
 
 def test_cross_validate_grid_search():

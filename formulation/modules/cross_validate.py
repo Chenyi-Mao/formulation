@@ -3,8 +3,8 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import KFold
-from predict_missing_value import data_dropna
-from predict import predict
+from .predict_missing_value import data_dropna
+from .predict import predict
 
 
 def cross_validate_grid_search(values, X_df, y_df):

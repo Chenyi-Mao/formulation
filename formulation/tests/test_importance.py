@@ -3,7 +3,7 @@ This function performs a test on the function `importance`
 """
 import numpy as np
 import pandas as pd
-from formulation.modules.importance import importance
+from ..modules.importance import importance
 
 rawdata = pd.read_csv('./formulation/data/FDA_APPROVED.csv')
 data = pd.DataFrame({'Unchanged_excretion_in_urine':

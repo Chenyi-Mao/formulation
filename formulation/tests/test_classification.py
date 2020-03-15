@@ -1,6 +1,6 @@
 import pandas as pd
-from formulation.modules.classification import predict
-from formulation.modules.classification import determine_new_accuracy
+from ..modules.classification import predict
+from ..modules.classification import determine_new_accuracy
 
 
 def test_predict():

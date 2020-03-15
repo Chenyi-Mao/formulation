@@ -3,8 +3,8 @@ Test cases for predict_missing_value submodule.
 """
 import pandas as pd
 
-from formulation.modules.predict_missing_value import data_dropna
-from formulation.modules.predict_missing_value import fill_missing_value
+from ..modules.predict_missing_value import data_dropna
+from ..modules.predict_missing_value import fill_missing_value
 
 
 # Global variables used in each test
