@@ -200,7 +200,7 @@ def cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators):
 
 if __name__ == '__main__':
 
-    data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
