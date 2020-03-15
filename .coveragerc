@@ -6,3 +6,4 @@ omit =
     *__init__*
 exclude_lines =
     if __name__ == .__main__.:
+    raise Exception("Illegal input test failed!")
