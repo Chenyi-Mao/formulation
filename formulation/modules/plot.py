@@ -66,6 +66,6 @@ def plot_figures(fname):
 
 
 if __name__ == '__main__':
-    
+
     fname = '../tests/gridvalues.npy'
     plot_figures(fname)
