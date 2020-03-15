@@ -1,19 +1,14 @@
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-
 from sklearn.metrics import classification_report
 from sklearn.model_selection import KFold
-
-
-def handle_missing_values(df):
-    # using dropna() function
-    df = df.dropna()
-
-    return df
+from modules.predict_missing_value import data_dropna
+from modules.predict import predict
 
 
 def cross_validate_grid_search(values, X_df, y_df):
+
     """
         This function uses 10-fold cross-validation to choose the best
         combination of max_depth and n_estimators for random forest classifier.
@@ -55,6 +50,7 @@ def cross_validate_grid_search(values, X_df, y_df):
     tablets_k_fold = []
 
     grid = []
+    gridvalues = []
 
     for max_depth in values[0]:
         for ntrees in values[1]:
@@ -71,9 +67,9 @@ def cross_validate_grid_search(values, X_df, y_df):
                 y_trn, y_tst = y[train_index], y[test_index]
 
                 clf = RandomForestClassifier(
-                    n_estimators=ntrees,
-                    max_depth=max_depth,
-                    random_state=0)
+                                    n_estimators=ntrees,
+                                    max_depth=max_depth,
+                                    random_state=0)
                 clf.fit(X_trn, y_trn)
 
                 y_pred = clf.predict(X_tst)
@@ -83,7 +79,7 @@ def cross_validate_grid_search(values, X_df, y_df):
                 accuracies.append(accuracy)
 
                 report = classification_report(
-                    y_tst, y_pred, output_dict=True)
+                    y_tst, y_pred, output_dict=True, zero_division=1)
                 solution += report['solution']['f1-score']
                 capsules += report['capsules']['f1-score']
                 tablets += report['tablets']['f1-score']
@@ -102,6 +98,11 @@ def cross_validate_grid_search(values, X_df, y_df):
 
             print('max depth: {:d}, n_estimators: {:d}, accuracy: {:f}'.format(
                 max_depth, ntrees, acc_k_fold))
+            gridvalues.append([max_depth, ntrees, acc_k_fold])
+
+    # End search
+    # Save grid points and values for plotting figures
+    np.save('gridvalues.npy', gridvalues)
 
     best_for_total = (best_depth, best_ntrees)
 
@@ -120,15 +121,16 @@ def cross_validate_grid_search(values, X_df, y_df):
     print('Best accuracy for total: {:f}'.format(best_accuracy))
 
     results = [
-        best_for_total,
-        best_for_solution,
-        best_for_capsules,
-        best_for_tablets]
+            best_for_total,
+            best_for_solution,
+            best_for_capsules,
+            best_for_tablets]
 
     return results
 
 
 def cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators):
+
     """
         This function uses 10-fold cross-validation to choose the best
         number of predictors to be included in the training set.
@@ -171,12 +173,13 @@ def cross_validate_n_predictors(X_df, y_df, max_depth, n_estimators):
             y_trn, y_tst = y[train_index], y[test_index]
 
             clf = RandomForestClassifier(
-                n_estimators=n_estimators,
-                max_depth=max_depth,
-                random_state=0)
+                            n_estimators=n_estimators,
+                            max_depth=max_depth,
+                            random_state=0)
             clf.fit(X_trn, y_trn)
 
-            y_pred = clf.predict(X_tst)
+            # y_pred = clf.predict(X_tst)
+            y_pred = predict(clf, X_tst)
             m = y_pred.shape[0]
             accuracy = [1 for i in range(m) if y_pred[i] == y_tst[i]]
             accuracy = np.sum(accuracy)/m
@@ -204,12 +207,9 @@ if __name__ == '__main__':
     df = pd.read_csv(data_path+data_fname)
     print(df.tail(3))
 
-    # Extract columns needed
+    # Dropnan
     columns = ['CLogP', 'HBA', 'HBD', 'PSDA', 'Formulation']
-    df = df[columns]
-
-    # Handle missing values in selected columns
-    df = handle_missing_values(df)
+    df = data_dropna(df, needed_cols=columns, subset=columns)
     print(df.tail(10))
 
     # Print count of each category
@@ -222,10 +222,8 @@ if __name__ == '__main__':
     target = ['Formulation']
     y = df[target]
 
-    # max_depth = range(1,10)
-    # ntrees = [5, 10, 20, 50, 100, 200, 500]
-    max_depth = [1, 2]
-    ntrees = [100]
+    max_depth = range(1, 5)
+    ntrees = range(1, 100, 50)
 
     results = cross_validate_grid_search([max_depth, ntrees], X, y)
     best_for_total = results[0]
@@ -233,10 +231,10 @@ if __name__ == '__main__':
     best_for_capsules = results[2]
     best_for_tablets = results[3]
     print('Best max_depth: {:d}, best n_estimators: {:d}'.format(
-        best_for_total[0], best_for_total[1]))
+                        best_for_total[0], best_for_total[1]))
     print('Best parameter for solution catogory:', best_for_solution)
     print('Best parameter for capsules catogory:', best_for_capsules)
     print('Best parameter for tablets catogory:', best_for_tablets)
 
     best_p = cross_validate_n_predictors(
-        X, y, best_for_total[0], best_for_total[1])
+                X, y, 2, 100)
