@@ -3,8 +3,8 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import KFold
-from modules.predict_missing_value import data_dropna
-from modules.predict import predict
+from formulation.modules.predict_missing_value import data_dropna
+from formulation.modules.predict import predict
 
 
 def cross_validate_grid_search(values, X_df, y_df):
@@ -102,7 +102,7 @@ def cross_validate_grid_search(values, X_df, y_df):
 
     # End search
     # Save grid points and values for plotting figures
-    np.save('gridvalues.npy', gridvalues)
+    np.save('../tests/gridvalues.npy', gridvalues)
 
     best_for_total = (best_depth, best_ntrees)
 
@@ -223,7 +223,7 @@ if __name__ == '__main__':
     y = df[target]
 
     max_depth = range(1, 5)
-    ntrees = range(1, 100, 50)
+    ntrees = range(1, 200, 50)
 
     results = cross_validate_grid_search([max_depth, ntrees], X, y)
     best_for_total = results[0]
