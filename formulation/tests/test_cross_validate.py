@@ -1,25 +1,21 @@
 import pandas as pd
-from modules.cross_validate import handle_missing_values
-from modules.cross_validate import cross_validate_grid_search
-# from cross_validate import cross_validate_n_predictors
+from formulation.modules.cross_validate import cross_validate_grid_search
+from formulation.modules.cross_validate import cross_validate_n_predictors
+from formulation.modules.predict_missing_value import data_dropna
 
 
 def test_cross_validate_grid_search():
 
-    # data_path = "../data/"
-    data_path = "./formulation/data/"
+    data_path = "../data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
     df = pd.read_csv(data_path+data_fname)
     print(df.tail(3))
 
-    # Extract columns needed
+    # Dropnan
     columns = ['CLogP', 'HBA', 'HBD', 'PSDA', 'Formulation']
-    df = df[columns]
-
-    # Handle missing values in selected columns
-    df = handle_missing_values(df)
+    df = data_dropna(df, needed_cols=columns, subset=columns)
     print(df.tail(10))
 
     # Print count of each category
@@ -32,8 +28,8 @@ def test_cross_validate_grid_search():
     target = ['Formulation']
     y_df = df[target]
 
-    max_depth = [1, 2]
-    ntrees = [100]
+    max_depth = range(1, 5)
+    ntrees = range(1, 200, 50)
 
     values = [max_depth, ntrees]
     results = cross_validate_grid_search(values, X_df, y_df)
@@ -50,25 +46,18 @@ def test_cross_validate_grid_search():
             assert isinstance(results[i][j], int)
 
 
-def cross_validate_n_predictors():
+def test_cross_validate_n_predictors():
 
-            
-test_cross_validate_grid_search():
-
-    # data_path = "../data/"
-    data_path = "./formulation/data/"
+    data_path = "../data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
     df = pd.read_csv(data_path+data_fname)
     print(df.tail(3))
 
-    # Extract columns needed
+    # Dropnan
     columns = ['CLogP', 'HBA', 'HBD', 'PSDA', 'Formulation']
-    df = df[columns]
-
-    # Handle missing values in selected columns
-    df = handle_missing_values(df)
+    df = data_dropna(df, needed_cols=columns, subset=columns)
     print(df.tail(10))
 
     # Print count of each category
@@ -88,4 +77,3 @@ test_cross_validate_grid_search():
 
     assert isinstance(best_p, int)
     assert best_p <= X_df.shape[1]
-
