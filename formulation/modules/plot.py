@@ -51,7 +51,7 @@ def plot_figures(fname):
 
     # Plot scatter figure
     fig = plt.figure(figsize=(8, 8))
-    ax = fig.add_subplot(111, projection='3d')
+    ax = fig.add_subplot(111, projection=Axes3D.name)
     xs = arr[:, 2]
     ys = arr[:, 0]
     zs = arr[:, 1]
@@ -63,3 +63,7 @@ def plot_figures(fname):
     plt.title(
         'Grid search for values of max_dpeth and n_estimators.', fontsize=12)
     plt.savefig('scatter.png')
+
+if __name__ == '__main__':
+    fname = '../tests/gridvalues.npy'
+    plot_figures(fname)
