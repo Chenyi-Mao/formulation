@@ -11,3 +11,6 @@ def test_plot_figures():
 
     assert os.path.exists('grid.png')
     assert os.path.exists('scatter.png')
+
+
+test_plot_figures()
