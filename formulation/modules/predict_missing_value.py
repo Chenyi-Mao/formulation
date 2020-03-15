@@ -72,14 +72,14 @@ def fill_missing_value(data, needed_cols, train_inputs, train_outpus,
 
     # Split data into training and testing sets
     train, test = train_test_split(clean_data, test_size=test_size,
-                                   random_state=2)
+                                   random_state=1)
     x_train = train[train_inputs]
     y_train = train[train_outpus]
     x_test = test[train_inputs]
     y_test = test[train_outpus]
 
     regressor = RandomForestRegressor(n_estimators=n_estimators,
-                                      max_depth=max_depth)
+                                      max_depth=max_depth, random_state=2)
     regressor.fit(x_train, y_train)
 
     cod = regressor.score(x_test, y_test)

@@ -64,6 +64,7 @@ def plot_figures(fname):
         'Grid search for values of max_dpeth and n_estimators.', fontsize=12)
     plt.savefig('scatter.png')
 
+
 if __name__ == '__main__':
     fname = '../tests/gridvalues.npy'
     plot_figures(fname)
