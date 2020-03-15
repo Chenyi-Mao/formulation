@@ -23,7 +23,7 @@ def predict(X_data, Y_data):
     print("\n Feature Importance \n", importance)
     print("\n Classicifation report\n", classification_report(y_test, y_pred))
     print("The predict Classicifation for all \n", y_pred)
-    return accuracy_score(y_test, y_pred)
+    return RFC
 
 
 # let user select first N's picks.

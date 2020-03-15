@@ -15,8 +15,8 @@ def test_predict():
     X = pick_data[['Unchanged_excretion_in_urine',
                    'cLogP', 'HBA', 'HBD', 'PSDA']]
     Y = pick_data['Formulation']
-    # assert np.round(predict(X, Y), 2) is not 1, "prediction is wrong"
-    assert isinstance(predict(X, Y), float), "wrong type 000"
+
+    assert not isinstance(predict(X, Y), float), "wrong type 000"
 
 
 def test_determine_new_accuracy():
