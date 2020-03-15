@@ -7,7 +7,7 @@ from formulation.modules.predict_missing_value import data_dropna
 
 
 def test_predict():
-    data_path = "../data/"
+    data_path = "./formulation/data/"
     data_fname = 'FDA_APPROVED.csv'
 
     # Read csv file
