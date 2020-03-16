@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/LOGO.png" width="900">
+  <img src="https://github.com/Chenyi-Mao/formulation/blob/master/images/LOGO.png" width="900">
 </p>
 
 --------------
