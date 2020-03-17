@@ -1,5 +1,8 @@
+import os
+
 import numpy as np
 import pandas as pd
+
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import KFold
@@ -102,6 +105,7 @@ def cross_validate_grid_search(values, X_df, y_df):
 
     # End search
     # Save grid points and values for plotting figures
+    os.makedirs('./images', exist_ok=True)
     np.save('./images/gridvalues.npy', gridvalues)
 
     best_for_total = (best_depth, best_ntrees)
