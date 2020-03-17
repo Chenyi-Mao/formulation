@@ -43,3 +43,10 @@
 * Inputs (with type information): raw data applied to build the model (dataframe), data of interest for the prediction
 * Outputs (with type information): the predicted formulation
 * How it interacts with other components: it wraps up all py files above to build a model and then apply the model on test data to make a final prediction. 
+
+## 5. predict.py
+* Function Name: predict
+* What it does: works as a wrapping up function that applied trained model to make predictions on unseen datasets
+* Inputs (with type information): trained random forest classifier model, unseen raw data in terms of features of interests (dataframe)
+* Outputs (with type information): formulation predictions with respect to unseen raw data
+* How it interacts with other components: it uses the model built by all four modules above and then make predictions on unseen datasets. 
