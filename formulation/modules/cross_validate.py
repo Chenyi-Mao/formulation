@@ -102,7 +102,7 @@ def cross_validate_grid_search(values, X_df, y_df):
 
     # End search
     # Save grid points and values for plotting figures
-    np.save('./formulation/tests/gridvalues.npy', gridvalues)
+    np.save('./images/gridvalues.npy', gridvalues)
 
     best_for_total = (best_depth, best_ntrees)
 
