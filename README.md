@@ -48,7 +48,10 @@ The `formulation`has been dividied into 6 modules: *predict_missing_value.py*, *
 6. lastly, *predict* wraps up everything and make a final prediction with respect to the unseen data. 
 
 #### Running tests
-Automated tests have been done by using [Travis CI](https://travis-ci.com/Chenyi-Mao/formulation), a integration service with Github. Two badges at the beginning indicates all test functions we have in the tests folder pass with _XXXXXXX_ coverage rate. 
+Automated tests have been done by using [Travis CI](https://travis-ci.com/Chenyi-Mao/formulation), a integration service with Github. Two badges at the beginning indicates all test functions we have in the tests folder pass with 100% coverage rate. 
+
+### Demonstration
+*example.ipynb* is a jupyter notebook authors created to demonstrate how to import all modules, use them to build a classification model, and make predictions.  
 
 ## Contributing
 As an open resource, contributing is always welcome. Authors recommend a discussion through opening an issue, writing an email, or any other approaches prior to making any changes. Then please follow the following procedures:
@@ -66,4 +69,4 @@ We are grateful of having five developers, Chenyi Mao, Dawei Gu, Zichen Zhu, Jin
 [MIT](https://en.wikipedia.org/wiki/MIT_License) - see [LICENSE](https://github.com/Chenyi-Mao/formulation/blob/master/LICENSE) for details.
 
 ## Acknowledgments
-Authors want to thank David Beck and Ting Cao for offering two interesting and educational courses. Authors also want to thank David Beck, Ting Cao, Ted Cohen, Jimin Qian, Torin Stetina, and Caitlyn Wolf for any feedbacks. Lastly, C. Mao wants to thank his supervisor Josh Vaughan for allowing him take these two courses that are totally irrelevant to his research. 
+Authors want to thank David Beck and Ting Cao for offering two interesting and educational courses. Authors also want to thank David Beck, Ting Cao, Ted Cohen, Jimin Qian, Torin Stetina, and Caitlyn Wolf for any feedbacks. Lastly, Chenyi wants to thank his supervisor Josh Vaughan for allowing him take these two courses that are totally irrelevant to his research. 
