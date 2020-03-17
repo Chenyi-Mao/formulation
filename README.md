@@ -33,22 +33,19 @@ git clone https://github.com/Chenyi-Mao/formulation.git
 ```
 
 ### Details
-After the installation, users can find more details from here. The package contains three primary items: two folders called **formulation** and **paper** and **README.md**. Formulation folder contains all modules needed to perform the random forest classifier and all tests developers wrote to test each module. Details can be found in the next two sections. Raw data used for the project comes from a literature article which is included in the folder, paper. 
+After the installation, users can find more details from here. The package contains three primary items: two folders called **formulation** and **paper**, **README.md**, and **examples.ipynb**. Formulation folder contains all modules needed to perform the random forest classifier and all tests developers wrote to test each module. Details can be found in the next two sections. Raw data used for the project comes from a literature article which is included in the folder, paper. 
 
 #### Modules
-The `formulation`has been dividied into 6 modules: *data_dropna*, *fill_missing_value*, *corss_validate_grid_search*, *cross_validate_n_predictors*, *importance*, *predict*, . Each module perform one task and works mutually with others. 
-1. *data_dropna* is used to selectively remove cells that have missing values. Once users get a sense of the raw data, they decide which features are important for the prediction and then data_dropna will help users clean empty cells corresponding to selected features and will return a cleaned dataframe for the further use.  An screenshot is included to demonstrate the utility: 
+The `formulation`has been dividied into 6 modules: *predict_missing_value.py*, *cross_validation.py*, *importance.py*, *classification*, and *predict*, . Each module perform one or two tasks and works mutually with others. 
+1. *predict_missing_value* is used to selectively remove cells that have missing values. Once users get a sense of the raw data, they decide which features are important for the prediction and then data_dropna will help users clean empty cells corresponding to selected features and will return a cleaned dataframe for the further use. In addition, it is designed to predict the missing value for the feature of interest. Meanwhile, mean squared error will be given after the prediction so users can decide whether to include this newly filled feature into the training process or not. 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-2. what if the feature of interest has a large number of values missing that could affect the efficiency of training process? No worries, *fill_missing_value* is here to help! Fill_missing_value is designed to predict the missing value for the feature of interest. Meanwhile, mean squared error will be given after the prediction so users can decide whether to include this newly filled feature into the training process or not. 
-
-3. once features of interest are settled, *cross_validate_grid_search* can be applied to find out the best n_estimator and max_depth combination leading to the best performance. 
+2. once features of interest are settled, *cross_validation* can be applied to find out the best n_estimator and max_depth combination leading to the best performance. 
 
 4. *importance* reports the individual importance for each selected feature under above chosen n_estimator and max_depth values.
 
-5. accoroding to the importance report, users can decide which features to include into the prediction step. *predict* outcomes the accuracy based on the overall test data. An screenshot is inculded to demonstrate the final outcome:
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+5. accoroding to the importance report, users can decide which features to eventually use in *classification* to build the classifer model.
+
+6. lastly, *predict* wraps up everything and make a final prediction with respect to the unseen data. 
 
 #### Running tests
 Automated tests have been done by using [Travis CI](https://travis-ci.com/Chenyi-Mao/formulation), a integration service with Github. Two badges at the beginning indicates all test functions we have in the tests folder pass with _XXXXXXX_ coverage rate. 
